@@ -29,11 +29,14 @@
         <div id="propList" style="height: 500px;"></div>
         <a href="http://www.gvit.com/"> <img src="http://www.gvit.com/wp-content/uploads/2015/12/LogoHeader.png" /></a>
         <br>
-        <b>&nbsp; ZenPacks.GoVanguard.Support</b>
+            <b>
+                &nbsp; <span tal:content="here/dmd/supportSettings/packageNameData"/>
+            </b>
         <br>
-        &nbsp; Version 1.0.X
+            &nbsp; Version <span tal:content="here/dmd/supportSettings/packageVersionData"/>
         <br>
-        <span tal:content="here/dmd/supportSettings/packageVersionData"/>
+            &nbsp; License <span tal:content="here/dmd/supportSettings/packageLicenseData"/> 
+        <br>
         <a href="http://www.gvit.com/zenoss/"> &nbsp; Need help or support on this package?</a>
       </tal:block>
     </tal:block>
