@@ -2,6 +2,7 @@ import logging
 import os
 from zope.component import getUtility
 from transaction import commit
+from Products.CMFCore.DirectoryView import registerDirectory
 from Products.ZenModel.ManagedEntity import ManagedEntity
 from Products.ZenModel.ZenPack import ZenPack as ZenPackBase
 from Products.Zuul.interfaces import IDeviceInfo, IComponentInfo
@@ -27,6 +28,12 @@ ManagedEntity.supportId = -1
 
 IComponentInfo._InterfaceClass__attrs['supportId'] = IDeviceInfo._InterfaceClass__attrs['supportId'] = Int(title=u'Customer Identifier', readonly=True, group='Details')
 DeviceInfo.supportId = ComponentInfo.supportId = property(lambda self: self._object.supportId)
+
+# Register skins directory
+skinsDir = os.path.join(os.path.dirname(__file__), 'skins')
+if os.path.isdir(skinsDir):
+    registerDirectory(skinsDir, globals())
+
 
 # Base ZP Class
 class ZenPack(ZenPackBase):
