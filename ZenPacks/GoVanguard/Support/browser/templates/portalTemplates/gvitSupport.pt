@@ -1,12 +1,12 @@
 <tal:block metal:use-macro="here/page_macros/old-new">
-  <tal:block metal:fill-slot="title">Support</tal:block>
+  <tal:block metal:fill-slot="title">GoVanguard Support</tal:block>
 
   <tal:block metal:fill-slot="head-local">
   </tal:block>
 
   <tal:block metal:fill-slot="breadCrumbPane">
     /<a tal:attributes="
-    href string:${here/absolute_url_path}/${template/id}">Support
+    href string:${here/absolute_url_path}/${template/id}">GoVanguard Support
   </a>
   </tal:block>
 
@@ -14,7 +14,7 @@
     <tal:block metal:use-macro="here/zenuimacros/macros/zentable-slidingdoors">
 
       <tal:block metal:fill-slot="title">
-        Support
+        GoVanguard Support
       </tal:block>
       <tal:block metal:fill-slot="body">
         <style>
@@ -23,7 +23,7 @@
           }
         </style>
         <script
-            tal:attributes="src python: context.zport.getVersionedResourcePath('/++resource++gvitSupport/js/app.js')"
+            tal:attributes="src python: context.zport.getVersionedResourcePath('/++resource++gvitSupport/extjs/gvitSupport.js')"
             >
         </script>
         <div id="propList" style="height: 500px;"></div>

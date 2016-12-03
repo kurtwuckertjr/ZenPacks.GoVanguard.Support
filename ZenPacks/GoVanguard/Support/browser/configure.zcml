@@ -7,16 +7,61 @@
     <!-- Resources -->
     <resourceDirectory
         name="gvitSupport"
-        directory="resources/gvitSupport"
+        directory="resources"
         />
 
     <!-- Page Declarations -->
     <page
-        template="templates/gvitSupport/gvitSupport.pt"
+        name="login_form"
+        for="*"
+        template="templates/overriddenTemplates/login_form.pt"
+        permission="zope2.Public"
+        />
+
+    <page
+        name="zenoss_error_message"
+        for="*"
+        template="templates/overriddenTemplates/zenoss_error_message.pt"
+        permission="zope2.Public"
+        />
+
+    <page
+        name="zenoss_feedback_error_message"
+        for="*"
+        template="templates/overriddenTemplates/zenoss_feedback_error_message.pt"
+        permission="zope2.Public"
+        />
+
+    <page
+        template="templates/portalTemplates/gvitSupport.pt"
         name="gvitSupport"
         for="Products.ZenModel.DataRoot.DataRoot"
         permission="zenoss.ManageDMD"
         />
-          
-</configure>
 
+    <page
+        template="templates/portalTemplates/authentication.pt"
+        name="authentication"
+        for="Products.ZenModel.DataRoot.DataRoot"
+        permission="zenoss.ManageDMD"
+        />
+
+    <page
+        template="templates/portalTemplates/branding.pt"
+        name="branding"
+        for="Products.ZenModel.DataRoot.DataRoot"
+        permission="zenoss.ManageDMD"
+        />
+
+    <page
+        template="templates/portalTemplates/licensing.pt"
+        name="licensing"
+        for="Products.ZenModel.Device.Device"
+        permission="zope2.Public"
+        />
+
+
+    <!-- Includes -->
+    <include package=".views"/>
+
+</configure>

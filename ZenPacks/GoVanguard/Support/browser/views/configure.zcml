@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configure
+    xmlns="http://namespaces.zope.org/browser">
+
+    <view
+       class=".portalMethods.brandingUpload"
+       name="uploadBrandingImage"
+       for="*"
+       permission="zenoss.ManageDMD"
+       />
+
+    <view
+       class=".portalMethods.authCertificateUpload"
+       name="uploadAuthCertificate"
+       for="*"
+       permission="zenoss.ManageDMD"
+       />
+
+    <view
+       class=".portalMethods.licenseUpload"
+       name="uploadSupportLicense"
+       for="*"
+       permission="zenoss.ManageDMD"
+       />
+
+</configure>
+

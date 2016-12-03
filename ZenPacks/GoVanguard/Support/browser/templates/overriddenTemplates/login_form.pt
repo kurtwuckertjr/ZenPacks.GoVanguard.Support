@@ -1,0 +1,208 @@
+<html>
+    <head>
+        <link rel="shortcut icon"
+              type="image/x-icon"
+              href="/zport/dmd/corePlusFavIcon.ico"/>
+        <title>GoVanguard Zenoss Lite - Login</title>
+        <style>
+            .inputbox {
+                background: transparent;
+                -moz-border-radius: 15px;
+                border-radius: 15px;
+                border:solid 1px black;
+                padding: 5px
+                width: 180px;
+                font-size: 110%;
+                color: #000000;
+                text-align: center;
+                position: absolute;
+                left: 367px;
+                z-index: 100;
+            }
+            .submitbutton {
+                position: absolute;
+                z-index: 100;
+                background: transparent url('zenoss-login-button.png');
+                top: 345px;
+                left: 466px;
+                width: 90px;
+                height: 32px;
+                border: medium none;
+                cursor: hand; cursor: pointer;
+            }
+            * { zoom: 1; } /* IE7 compatibility */
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: #888;
+                position: relative;
+                z-index: 0;
+            }
+            #topbar {
+                height: 15%;
+                position: relative;
+                z-index: 0;
+            }
+            #middlebar {
+                text-align:center;
+                height:650px;
+                border-width: 2px 0;
+                border-style: solid;
+                border-color: #444;
+                background-color:#f4f4f4;
+                position: relative;
+                z-index: 1;
+            }
+            #container {
+                margin: 0 auto;
+                position: relative;
+                z-index: 1;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 650px;
+                visibility: visible
+            }
+            #loginimg {
+                position: relative;
+                height: 650px;
+                width: 100%;
+                top: 0;
+                left: 0px;
+                z-index: 2;
+            }
+            #errorbox {
+                width: 300px;
+                position: absolute;
+                top: 340px;
+                left: 310px;
+                z-index: 100;
+            }
+            span.error {
+                font-family: sans-serif;
+                color: #8B0000;
+            }
+            #copyright {
+                color: #000000;
+                font-size: 70%;
+                font-family: sans-serif;
+                text-align: center;
+                width: 400px;
+                position: absolute;
+                top: 400px;
+                left: 265px;
+                z-index: 2;
+            }
+            #logintext {
+                color: #000000;
+                font-size: 110%;
+                font-family: sans-serif;
+                text-align: center;
+                width: 400px;
+                position: absolute;
+                top: 245px;
+                left: 125px;
+                z-index: 2;
+            }
+            #bottombrandingcontainer {
+                margin: 0 auto;
+                position: absolute;
+                background-color:#888;
+                background: transparent url('company-logo.png');
+                z-index: 2;
+                top: 265px;
+                left: 585px;
+                width: 65px;
+                height: 65px;
+                visibility: visible
+            }
+            #brandingcontainer {
+                margin: 0 auto;
+                position: absolute;
+                background-color:#888;
+                background: transparent;
+                z-index: 2;
+                top: 10px;
+                left: 10px;
+                width: 250px;
+                height: 100px;
+                visibility: visible;
+                font-family: sans-serif;
+            }
+            #bannercontainer {
+                margin: 0 auto;
+                position: absolute;
+                background-color:#888;
+                background: transparent;
+                z-index: 2;
+                top: 280px;
+                left: 670px;
+                width: 250px;
+                height: 300px;
+                visibility: visible;
+                font-family: sans-serif;
+            }
+        </style>
+    </head>
+
+    <body onload="if (window.location != window.top.location) {window.top.location.href = window.location.href;} document.getElementById('username').focus();">
+        <div id="topbar"></div>
+        <form name="loginform"
+            method="POST"
+              tal:attributes="action string:${here/absolute_url}/login">
+                <input type="hidden" name="came_from" value=""
+                       tal:attributes="value request/came_from | string:"/>
+                <input type="hidden" name="submitted" value="true" />
+            <div id="middlebar">
+                <div id="container">
+                    <div id="loginimg"
+                        style="background:transparent url(zenoss-login.png)
+                        no-repeat">
+                    </div>
+                    <input id="username" type="text" name="__ac_name"
+                        class="inputbox" style="top:260px;"/>
+                    <input id="passwrd" type="password" name="__ac_password"
+                        class="inputbox" style="top:302px;"/>
+                    <div id="errorbox">
+                        <tal:block define="msg here/zport/getLoginMessage"
+                            tal:omit-tag=""
+                            tal:on-error="string:">
+                            <span class="error" tal:condition="msg"
+                                  tal:content="structure msg" />
+                        </tal:block>
+                    </div>
+                    <tal:block tal:content="structure here/getLoginButton"/>
+                    <div id="logintext">
+                        <p>
+                            Username:
+                            <br><br>
+                            Password:
+                        </p>
+                    </div>
+
+                    <div id="copyright">
+                        <p>
+                            GoVanguard Zenoss Lite Copyright &copy; 2016 <a href="http://gvit.com" target="_blank">GoVanguard, Inc.</a> | Version <span tal:content="here/supportSettings/getPackageVersion"/>
+                            <br><br>
+                            Zenoss Copyright &copy; 2005-2013 <a href="http://zenoss.com" target="_blank">Zenoss, Inc.</a> | Version <span tal:content="here/getZenossVersionShort"/>
+                        </p>
+                    </div>
+                    <div id="brandingcontainer">
+                        <img src="company-logo.png" width=32 height=32>
+                        <a href='' tal:attributes="href here/zport/dmd/supportSettings/CompanyLink; title here/zport/dmd/supportSettings/CompanyMotto" tal:content="here/zport/dmd/supportSettings/CompanyName" target="_blank" style="color: black; font-size: 125%; text-decoration: none; text-align: left;"></a>
+                        <br>
+                        <span tal:content="here/zport/dmd/supportSettings/CompanyMotto" style="color: black; font-size: 85%; text-decoration: none; text-align: center;"/>
+                    </div>
+                    <div id="bottombrandingcontainer">
+                    </div>
+                    <div id="bannercontainer">
+                        <span tal:content="here/zport/dmd/supportSettings/CompanyBanner" style="color: black; font-size: 70%; text-decoration: none; text-align: justified;"/>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <tal:block tal:content="structure here/getExtraLoginFormContents"/>
+    </body>
+
+
+</html>

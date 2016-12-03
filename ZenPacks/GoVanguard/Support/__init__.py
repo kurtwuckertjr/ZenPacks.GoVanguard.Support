@@ -98,22 +98,18 @@ actions = list(DataRoot.factory_type_information[0]['actions'])
 actions.append(extAction)
 newActions = tuple(actions)
 DataRoot.factory_type_information[0]['actions'] = newActions
-# DataRoot.factory_type_information[0]['actions'] = tuple([entry for entry in (DataRoot.factory_type_information[0]['actions']) if entry['action'] != 'gvitSupport'])
 
 actions = list(UserSettingsManager.factory_type_information[0]['actions'])
 actions.append(extUserAction)
 newActions = tuple(actions)
 UserSettingsManager.factory_type_information[0]['actions'] = newActions
-# UserSettingsManager.factory_type_information[0]['actions'] = tuple([entry for entry in (UserSettingsManager.factory_type_information[0]['actions']) if entry['action'] != 'gvitSupport'])
 
 actions = list(ZenPackManager.factory_type_information[0]['actions'])
 actions.append(extUserAction)
 newActions = tuple(actions)
 ZenPackManager.factory_type_information[0]['actions'] = newActions
-# ZenPackManager.factory_type_information[0]['actions'] = tuple([entry for entry in (ZenPackManager.factory_type_information[0]['actions']) if entry['action'] != 'gvitSupport'])
 
 actions = list(ZenossInfo.factory_type_information[0]['actions'])
 actions.append(extZenossInfoAction)
 newActions = tuple(actions)
 ZenossInfo.factory_type_information[0]['actions'] = newActions
-# ZenossInfo.factory_type_information[0]['actions'] = tuple([entry for entry in (ZenossInfo.factory_type_information[0]['actions']) if entry['action'] != 'gvitSupport'])
