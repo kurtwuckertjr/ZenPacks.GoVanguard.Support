@@ -1,0 +1,5 @@
+[default]
+title=Zenoss CorePlus Login
+
+[security]
+View=0:Anonymous

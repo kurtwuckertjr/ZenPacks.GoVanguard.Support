@@ -1,0 +1,5 @@
+[default]
+title=Zenoss CorePlus - An error has occurred:(
+
+[security]
+View=0:Anonymous
