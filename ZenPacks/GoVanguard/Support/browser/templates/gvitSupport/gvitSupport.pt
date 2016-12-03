@@ -26,14 +26,14 @@
             tal:attributes="src python: context.zport.getVersionedResourcePath('/++resource++gvitSupport/js/app.js')"
             >
         </script>
-        <div id="propList"></div>
-        <br><br>
-        <tal:block metal:fill-slot="breadCrumbPane">
-          /<a tal:attributes="
-          href http://www.gvit.com/zenoss/">Need help or support?
-        </a>
-        <br><br>
-        </tal:block>
+        <div id="propList" style="height: 500px;"></div>
+        <a href="http://www.gvit.com/"> <img src="http://www.gvit.com/wp-content/uploads/2015/12/LogoHeader.png" /></a>
+        <br>
+        <b>&nbsp; ZenPacks.GoVanguard.Support</b>
+        <br>
+        &nbsp; Version 1.0.X
+        <br>
+        <a href="http://www.gvit.com/zenoss/"> &nbsp; Need help or support on this package?</a>
       </tal:block>
     </tal:block>
   </tal:block>
