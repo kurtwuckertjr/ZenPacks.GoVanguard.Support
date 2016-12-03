@@ -11,7 +11,7 @@ class authCertificateUpload(BrowserView):
     """
 
     log = logging.getLogger("zen.ZenPacks.GoVanguard.Support.Authentication")
-    redirect = ViewPageTemplateFile('../templates/authenticationMethod/authentication.pt')
+    redirect = ViewPageTemplateFile('../templates/portalTemplates/authentication.pt')
 
     def __call__(self, *args, **kwargs):
         if self.request.get('fileData'):
@@ -28,7 +28,7 @@ class brandingUpload(BrowserView):
     """
 
     log = logging.getLogger("zen.ZenPacks.GoVanguard.Support.Branding")
-    redirect = ViewPageTemplateFile('../templates/brandingMethods/branding.pt')
+    redirect = ViewPageTemplateFile('../templates/portalTemplates/branding.pt')
 
     def __call__(self, *args, **kwargs):
         if self.request.get('fileData'):
@@ -53,7 +53,7 @@ class licenseUpload(BrowserView):
     """
 
     log = logging.getLogger("zen.ZenPacks.GoVanguard.Support.Licensing")
-    redirect = ViewPageTemplateFile('../templates/portalMethods/licensing.pt')
+    redirect = ViewPageTemplateFile('../templates/portalTemplates/licensing.pt')
 
     def __call__(self, *args, **kwargs):
         if self.request.get('fileData'):
