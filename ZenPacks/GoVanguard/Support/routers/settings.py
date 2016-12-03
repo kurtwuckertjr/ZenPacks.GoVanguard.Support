@@ -15,7 +15,7 @@ class supportSettingsRouter(DirectRouter):
 
     def getSupportSettings(self):
         """
-        Retrieves the collection of interface branding settings
+        Retrieves the collection of settings
         """
         settings = self._getSupportSettings()
         return DirectResponse.succeed(data=Zuul.marshal(settings.getSupportSettingsData()))
@@ -23,7 +23,7 @@ class supportSettingsRouter(DirectRouter):
     @require('Manage DMD')
     def setSupportSettings(self, **kwargs):
         """
-        Accepts key value pair of user interface settings.
+        Accepts key value pair of settings
         """
         settings = self._getSupportSettings()
         oldValues = {}
@@ -33,3 +33,10 @@ class supportSettingsRouter(DirectRouter):
             newValues[key] = str(value)
             setattr(settings, key, value)
         return DirectResponse.succeed()
+
+    def getSupportedPacks(self):
+        """
+        Retrieves the collection of supported ZenPacks
+        """
+        settings = self._getSupportSettings()
+        return DirectResponse.succeed(data=Zuul.marshal(settings.getSupportedPacksData()))

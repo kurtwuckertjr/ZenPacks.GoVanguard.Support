@@ -13,15 +13,16 @@ class supportSettings(ZenModelRM):
     _supportProperties = (
         {'id': 'CompanyName', 'type': 'string', 'mode': 'w'},
         {'id': 'SupportKey', 'type': 'string', 'mode': 'w'},
-        {'id': 'SupportType', 'type': 'string', 'mode': 'w'}
+        {'id': 'SupportType', 'type': 'string', 'mode': 'w'},
+        {'id': 'SupportedPacks', 'type': 'list', 'mode': 'w'}
         )
 
     _supportPropertyMetaData = {
         'CompanyName': {'xtype': 'textfield', 'name': _t('Company name'), 'defaultValue':'Unregistered Company', 'allowBlank': False},
         'SupportKey': {'xtype': 'textfield', 'name': _t('Support Key'), 'defaultValue':'', 'allowBlank': True},
-        'SupportType': {'xtype': 'textfield', 'name': _t('Support Type'), 'defaultValue':'Unsupported', 'allowBlank': False}
+        'SupportType': {'xtype': 'textfield', 'name': _t('Support Type'), 'defaultValue':'Unsupported', 'allowBlank': False},
+        'SupportedPacks': {'xtype': 'textfield', 'name': _t('Supported Packages'), 'defaultValue':'None', 'allowBlank': False}
         }
-
 
     def getSupportSettingsData(self):
         """
@@ -34,3 +35,15 @@ class supportSettings(ZenModelRM):
             prop.update(self._supportPropertyMetaData[prop['id']])
             prop['value'] = getattr(self, prop['id'], prop['defaultValue'])
         return settings
+
+    def getSupportedPacksData(self):
+        return "Test!!"
+
+    def getPackageVersion(self):
+        return "1.2.3"
+
+    def getPackageName(self):
+        return "ZenPacks.GoVanguard.Support"
+
+    def getPackageLicense(self):
+        return "0987654321"
