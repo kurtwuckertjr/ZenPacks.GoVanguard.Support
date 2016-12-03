@@ -6,7 +6,7 @@
 
     <!-- Resources -->
     <resourceDirectory
-        name="support"
+        name="supportRes"
         directory="resources/support"
         />
 

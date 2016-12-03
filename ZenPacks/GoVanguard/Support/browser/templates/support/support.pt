@@ -23,7 +23,7 @@
           }
         </style>
         <script
-            tal:attributes="src python: context.zport.getVersionedResourcePath('/++resource++support/js/app.js')"
+            tal:attributes="src python: context.zport.getVersionedResourcePath('/++resource++supportRes/js/app.js')"
             >
         </script>
         <div id="propList"></div>
