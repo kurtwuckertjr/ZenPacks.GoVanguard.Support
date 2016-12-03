@@ -2,6 +2,7 @@ import logging
 import os
 from zope.component import getUtility
 from transaction import commit
+from Products.Five.viewlet import viewlet
 from Products.CMFCore.DirectoryView import registerDirectory
 from Products.ZenModel.ManagedEntity import ManagedEntity
 from Products.ZenModel.ZenPack import ZenPack as ZenPackBase
@@ -33,6 +34,9 @@ DeviceInfo.supportId = ComponentInfo.supportId = property(lambda self: self._obj
 skinsDir = os.path.join(os.path.dirname(__file__), 'skins')
 if os.path.isdir(skinsDir):
     registerDirectory(skinsDir, globals())
+
+# Register theme CSS
+gvitSkinCSS = viewlet.CSSViewlet('gvitSkin/gvitSkin.css')
 
 
 # Base ZP Class
