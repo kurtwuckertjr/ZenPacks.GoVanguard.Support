@@ -27,8 +27,16 @@ DeviceInfo.supportId = ComponentInfo.supportId = property(lambda self: self._obj
 class ZenPack(ZenPackBase):
     def install(self, app):
         super(ZenPack, self).install(app)
-        os.system('easy_install -U setuptools')
-        os.system('easy_install suds-jurko')
+        try:
+            os.system('easy_install -U setuptools')
+        except:
+            log.error('Could not upgrade setuptools! You must do this manually!)
+            pass
+        try:
+            os.system('easy_install suds-jurko')
+        except:
+            log.error('Could not install suds-jurko! You must do this manually!')
+            pass
         log.info('Adding supportSettings in to DMD')
         if not hasattr(app.zport.dmd,'supportSettings'):
             manage_addSupportSettings(app.zport.dmd)
