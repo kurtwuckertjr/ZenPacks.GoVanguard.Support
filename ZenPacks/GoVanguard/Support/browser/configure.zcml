@@ -6,14 +6,14 @@
 
     <!-- Resources -->
     <resourceDirectory
-        name="supportRes"
-        directory="resources/support"
+        name="gvitSupport"
+        directory="resources/gvitSupport"
         />
 
     <!-- Page Declarations -->
     <page
-        template="templates/support/support.pt"
-        name="support"
+        template="templates/gvitSupport/gvitSupport.pt"
+        name="gvitSupport"
         for="Products.ZenModel.DataRoot.DataRoot"
         permission="zenoss.ManageDMD"
         />
