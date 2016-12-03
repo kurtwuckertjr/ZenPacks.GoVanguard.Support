@@ -36,7 +36,7 @@ if os.path.isdir(skinsDir):
     registerDirectory(skinsDir, globals())
 
 # Register theme CSS
-gvitSkinCSS = viewlet.CSSViewlet('gvitSkin/gvitSkin.css')
+GvitSkinCSS = viewlet.CSSViewlet('gvitSkin/gvitSkin.css')
 
 
 # Base ZP Class

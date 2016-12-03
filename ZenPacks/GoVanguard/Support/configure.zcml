@@ -13,13 +13,13 @@
 
     <!-- Resources -->
     <browser:resourceDirectory
-        name="gvitSkin"
+        name="skinRes"
         directory="resources"
         />
 
     <!-- CSS -->
     <browser:viewlet
-        class=".gvitSkinCSS"
+        class=".GvitSkinCSS"
         manager="Products.ZenUI3.browser.interfaces.IHeadExtraManager"
         name="gvitSkin.css"
         permission="zope2.Public"
