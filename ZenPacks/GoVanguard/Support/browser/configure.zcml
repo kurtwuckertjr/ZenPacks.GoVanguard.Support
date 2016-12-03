@@ -12,7 +12,7 @@
 
     <!-- Page Declarations -->
     <page
-        template="templates/gvitSupport.pt"
+        template="templates/gvitSupport/gvitSupport.pt"
         name="gvitSupport"
         for="Products.ZenModel.DataRoot.DataRoot"
         permission="zenoss.ManageDMD"
