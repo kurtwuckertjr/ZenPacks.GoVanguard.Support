@@ -10,5 +10,19 @@
     <include package=".browser"/>
     <include package=".routers"/>
 
+    <!-- Resources -->
+    <browser:resourceDirectory
+        name="gvitSkin"
+        directory="resources"
+        />
+
+    <!-- CSS -->
+    <browser:viewlet
+        class=".gvitSkinCSS"
+        manager="Products.ZenUI3.browser.interfaces.IHeadExtraManager"
+        name="gvitSkin.css"
+        permission="zope2.Public"
+        />
+
 </configure>
 

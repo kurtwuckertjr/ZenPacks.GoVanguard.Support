@@ -1,0 +1,11 @@
+#header .bg .bg-leftcap {
+    background-image: url(/++resource++gvitSkin/header_bg_leftcap.png);
+}
+
+#header .bg .bg-tile {
+    background-image: url(/++resource++gvitSkin/header_bg_tile.png);
+}
+#secondarynav li.nav-item-active a { 
+    color: #3b70ab;
+}
+
