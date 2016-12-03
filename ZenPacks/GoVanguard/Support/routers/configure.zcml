@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configure
+        xmlns="http://namespaces.zope.org/zope"
+        xmlns:browser="http://namespaces.zope.org/browser"
+        xmlns:five="http://namespaces.zope.org/five">
+  
+  <include package="Products.ZenUtils.extdirect.zope" file="meta.zcml"/>
+  <include package="Products.ZenModel" file="permissions.zcml"/>
+
+  <browser:directRouter
+            name="support_settings_router"
+            for="*"
+            class=".settings.supportSettingsRouter"
+            namespace="Zenoss.remote"
+            />
+
+</configure>

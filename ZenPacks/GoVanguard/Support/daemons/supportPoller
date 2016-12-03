@@ -1,0 +1,16 @@
+#! /usr/bin/env bash
+######################################################################
+#
+# Copyright 2016 GoVanguard, Inc.  All Rights Reserved.
+#
+######################################################################
+
+. $ZENHOME/bin/zenfunctions
+
+MYPATH=`python -c "import os.path; print os.path.realpath('$0')"`
+THISDIR=`dirname $MYPATH`
+PRGHOME=`dirname $THISDIR`
+PRGNAME=supportPoller.py
+CFGFILE=$CFGDIR/supportPoller.conf
+
+generic "$@"

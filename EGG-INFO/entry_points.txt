@@ -1,0 +1,2 @@
+[zenoss.zenpacks]
+ZenPacks.GoVanguard.Support = ZenPacks.GoVanguard.Support

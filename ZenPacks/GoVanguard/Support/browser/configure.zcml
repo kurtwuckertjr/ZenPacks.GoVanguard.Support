@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configure
+    xmlns="http://namespaces.zope.org/browser">
+
+    <include package="zenoss.extjs"/>
+
+    <!-- Resources -->
+    <resourceDirectory
+        name="support"
+        directory="resources/support"
+        />
+
+    <!-- Page Declarations -->
+    <page
+        template="templates/support/support.pt"
+        name="support"
+        for="Products.ZenModel.DataRoot.DataRoot"
+        permission="zenoss.ManageDMD"
+        />
+          
+</configure>
+
