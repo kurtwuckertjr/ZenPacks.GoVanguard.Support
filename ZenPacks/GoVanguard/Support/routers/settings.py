@@ -33,19 +33,3 @@ class supportSettingsRouter(DirectRouter):
             newValues[key] = str(value)
             setattr(settings, key, value)
         return DirectResponse.succeed()
-
-    def getSupportedPacks(self):
-        """
-        Retrieves the collection of supported ZenPacks
-        """
-        settings = self._getSupportSettings()
-        return DirectResponse.succeed(data=Zuul.marshal(settings.getSupportedPacksData()))
-
-    def getPackageVersion(self):
-        return self.packageVersionData
-
-    def getPackageName(self):
-        return self.packageNameData
-
-    def getPackageLicense(self):
-        return self.packageLicenseData

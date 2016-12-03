@@ -10,18 +10,30 @@ def manage_addSupportSettings(context, id="supportSettings"):
 class supportSettings(ZenModelRM):
     _relations = ()
 
-    _supportProperties = (
-        {'id': 'CompanyName', 'type': 'string', 'mode': 'w'},
-        {'id': 'SupportKey', 'type': 'string', 'mode': 'w'},
-        {'id': 'SupportType', 'type': 'string', 'mode': 'w'},
-        {'id': 'SupportedPacks', 'type': 'list', 'mode': 'w'}
+    _exProperties = (
+        {'id': 'packageNameData', 'type': 'string', 'mode': 'r'},
+        {'id': 'packageVersionData', 'type': 'string', 'mode': 'r'},
+        {'id': 'packageLicenseData', 'type': 'string', 'mode': 'r'},
+        {'id': 'companyName', 'type': 'string', 'mode': 'w'},
+        {'id': 'companyMotto', 'type': 'string', 'mode': 'w'},
+        {'id': 'companyLink', 'type': 'string', 'mode': 'w'},
+        {'id': 'companyBanner', 'type': 'string', 'mode': 'w'},
+        {'id': 'supportKey', 'type': 'string', 'mode': 'w'},
+        {'id': 'supportType', 'type': 'string', 'mode': 'w'},
+        {'id': 'supportedPacks', 'type': 'list', 'mode': 'w'}
         )
 
-    _supportPropertyMetaData = {
-        'CompanyName': {'xtype': 'textfield', 'name': _t('Company name'), 'defaultValue':'Unregistered Company', 'allowBlank': False},
-        'SupportKey': {'xtype': 'textfield', 'name': _t('Support Key'), 'defaultValue':'', 'allowBlank': True},
-        'SupportType': {'xtype': 'textfield', 'name': _t('Support Type'), 'defaultValue':'Unsupported', 'allowBlank': False},
-        'SupportedPacks': {'xtype': 'textfield', 'name': _t('Supported Packages'), 'defaultValue':'None', 'allowBlank': False}
+    _exPropertyMetaData = {
+        'packageNameData': {'xtype': 'textfield', 'name': _t('Package name'), 'defaultValue':'Unknown', 'allowBlank': False},
+        'packageVersionData': {'xtype': 'textfield', 'name': _t('Package version'), 'defaultValue':'Unknown', 'allowBlank': False},
+        'packageLicenseData': {'xtype': 'textfield', 'name': _t('Package license'), 'defaultValue':'Unlicensed', 'allowBlank': False},
+        'companyName': {'xtype': 'textfield', 'name': _t('Company name'), 'defaultValue':'Unregistered Company', 'allowBlank': False},
+        'companyMotto': {'xtype': 'textfield', 'name': _t('Company motto'), 'defaultValue':'', 'allowBlank': True},
+        'companyLink': {'xtype': 'textfield', 'name': _t('Company link'), 'defaultValue':'http://gvit.com', 'allowBlank': True},
+        'companyBanner': {'xtype': 'textfield', 'name': _t('Company banner'), 'defaultValue':'', 'allowBlank': True},
+        'supportKey': {'xtype': 'textfield', 'name': _t('Support Key'), 'defaultValue':'', 'allowBlank': True},
+        'supportType': {'xtype': 'textfield', 'name': _t('Support Type'), 'defaultValue':'Unsupported', 'allowBlank': False},
+        'supportedPacks': {'xtype': 'textfield', 'name': _t('Supported Packages'), 'defaultValue':'None', 'allowBlank': False}
         }
 
     def getSupportSettingsData(self):
@@ -30,9 +42,9 @@ class supportSettings(ZenModelRM):
         @return: The value of the settings along with some meta information
         for display
         """
-        settings = deepcopy(self._supportProperties)
+        settings = deepcopy(self._exProperties)
         for prop in settings:
-            prop.update(self._supportPropertyMetaData[prop['id']])
+            prop.update(self._exPropertyMetaData[prop['id']])
             prop['value'] = getattr(self, prop['id'], prop['defaultValue'])
         return settings
 
@@ -46,10 +58,10 @@ class supportSettings(ZenModelRM):
         return self.packageLicenseData
 
     def getCompanyMotto(self):
-        return "Tacos!!!"
+        return self.companyMotto
 
     def getCompanyLink(self):
-        return "Some URL!"
+        return self.companyLink
 
     def getCompanyBanner(self):
-        return "Some banner!"
+        return self.companyBanner
