@@ -30,7 +30,7 @@ class ZenPack(ZenPackBase):
         try:
             os.system('easy_install -U setuptools')
         except:
-            log.error('Could not upgrade setuptools! You must do this manually!)
+            log.error('Could not upgrade setuptools! You must do this manually!')
             pass
         try:
             os.system('easy_install suds-jurko')
