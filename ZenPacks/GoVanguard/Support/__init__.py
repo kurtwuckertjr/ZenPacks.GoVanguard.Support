@@ -15,6 +15,11 @@ from Products.ZenModel.ZenPackManager import ZenPackManager
 from Products.ZenModel.ZenossInfo import ZenossInfo
 from Products.ZenModel.ZenossSecurity import *
 
+##
+packageNameData = "ZenPacks.GoVanguard.Support"
+packageVersionData = "1.0.0"
+packageLicenseData = "Not Licensed"
+
 log = logging.getLogger("zen.GoVanguard.Support")
 
 # Extend all ManagedEntity derivative classes to add supportId
@@ -27,20 +32,29 @@ DeviceInfo.supportId = ComponentInfo.supportId = property(lambda self: self._obj
 class ZenPack(ZenPackBase):
     def install(self, app):
         super(ZenPack, self).install(app)
-        #try:
-        #    os.system('easy_install -U setuptools')
-        #except:
-        #    log.error('Could not upgrade setuptools! You must do this manually!')
-        #    pass
-        #try:
-        #    os.system('easy_install suds-jurko')
-        #except:
-        #    log.error('Could not install suds-jurko! You must do this manually!')
-        #    pass
         log.info('Adding supportSettings in to DMD')
         if not hasattr(app.zport.dmd,'supportSettings'):
             manage_addSupportSettings(app.zport.dmd)
             commit()
+        dmd.supportSettings.packageNameData = packageNameData
+        dmd.supportSettings.packageVersionData = packageVersionData
+        dmd.supportSettings.packageLicenseData = packageLicenseData
+        commit()
+
+
+    def upgrade(self, app):
+        super(ZenPack, self).install(app)
+        log.info('Updating supportSettings in to DMD')
+        if hasattr(app.zport.dmd,'supportSettings'):
+            app.zport.dmd._delObject('supportSettings')
+            commit()
+        if not hasattr(app.zport.dmd,'supportSettings'):
+            manage_addSupportSettings(app.zport.dmd)
+            commit()
+        dmd.supportSettings.packageNameData = packageNameData
+        dmd.supportSettings.packageVersionData = packageVersionData
+        dmd.supportSettings.packageLicenseData = packageLicenseData
+        commit()
 
     def remove(self, app, leaveObjects=False):
         if not leaveObjects:
@@ -54,6 +68,11 @@ class ZenPack(ZenPackBase):
                 ZenPackManager.factory_type_information[0]['actions'] = tuple([entry for entry in (ZenPackManager.factory_type_information[0]['actions']) if entry['action'] != 'gvitSupport'])
                 ZenossInfo.factory_type_information[0]['actions'] = tuple([entry for entry in (ZenossInfo.factory_type_information[0]['actions']) if entry['action'] != 'gvitSupport'])
                 commit()
+                del dmd.supportSettings.packageNameDat
+                del dmd.supportSettings.packageVersionData
+                del dmd.supportSettings.packageLicenseData
+                commit()
+
         super(ZenPack, self).remove(app, leaveObjects)
 
 # Factory extension definitions

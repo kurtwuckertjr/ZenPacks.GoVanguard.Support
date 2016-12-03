@@ -41,10 +41,11 @@ class supportSettingsRouter(DirectRouter):
         settings = self._getSupportSettings()
         return DirectResponse.succeed(data=Zuul.marshal(settings.getSupportedPacksData()))
 
-    def getVersion(self):
-        versionData = "2.0.0"
-        return DirectResponse.succeed(data=Zuul.marshal(versionData))
+    def getPackageVersion(self):
+        return self.packageVersionData
 
-    def getName(self):
-        nameData = "ZenPacks.GoVanguard.Automation.Classifier"
-        return DirectResponse.succeed(data=Zuul.marshal(nameData))
+    def getPackageName(self):
+        return self.packageNameData
+
+    def getPackageLicense(self):
+        return self.packageLicenseData
