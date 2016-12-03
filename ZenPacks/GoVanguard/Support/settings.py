@@ -49,19 +49,43 @@ class supportSettings(ZenModelRM):
         return settings
 
     def getPackageVersion(self):
-        return self.packageVersionData
+        try:
+            result = self.packageVersionData
+        except:
+            result = ''
+        return result
 
     def getPackageName(self):
-        return self.packageNameData
+        try:
+            result = self.packageNameData
+        except:
+            result = ''
+        return result
 
     def getPackageLicense(self):
-        return self.packageLicenseData
+        try:
+            result = self.packageLicenseData
+        except:
+            result = ''
+        return result
 
     def getCompanyMotto(self):
-        return self.companyMotto
+        try:
+            result = self.companyMotto
+        except:
+            result = ''
+        return result
 
     def getCompanyLink(self):
-        return self.companyLink
+        try:
+            result = self.companyLink
+        except:
+            result = ''
+        return result
 
     def getCompanyBanner(self):
-        return self.companyBanner
+        try:
+            result = self.companyBanner
+        except:
+            result = ''
+        return result
