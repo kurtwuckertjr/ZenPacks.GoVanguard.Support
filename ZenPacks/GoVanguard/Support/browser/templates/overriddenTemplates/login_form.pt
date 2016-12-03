@@ -182,21 +182,21 @@
 
                     <div id="copyright">
                         <p>
-                            GoVanguard Zenoss Lite Copyright &copy; 2016 <a href="http://gvit.com" target="_blank">GoVanguard, Inc.</a> | Version <span tal:content="here/supportSettings/getPackageVersion"/>
+                            GoVanguard Zenoss Lite Copyright &copy; 2016 <a href="http://gvit.com" target="_blank">GoVanguard, Inc.</a> | Version <span tal:content="here/zport/dmd/supportSettings/getPackageVersion"/>
                             <br><br>
                             Zenoss Copyright &copy; 2005-2013 <a href="http://zenoss.com" target="_blank">Zenoss, Inc.</a> | Version <span tal:content="here/getZenossVersionShort"/>
                         </p>
                     </div>
                     <div id="brandingcontainer">
                         <img src="company-logo.png" width=32 height=32>
-                        <a href='' tal:attributes="href here/zport/dmd/supportSettings/CompanyLink; title here/zport/dmd/supportSettings/CompanyMotto" tal:content="here/zport/dmd/supportSettings/CompanyName" target="_blank" style="color: black; font-size: 125%; text-decoration: none; text-align: left;"></a>
+                        <a href='' tal:attributes="href here/zport/dmd/supportSettings/getCompanyLink; title here/zport/dmd/supportSettings/CompanyMotto" tal:content="here/zport/dmd/supportSettings/CompanyName" target="_blank" style="color: black; font-size: 125%; text-decoration: none; text-align: left;"></a>
                         <br>
-                        <span tal:content="here/zport/dmd/supportSettings/CompanyMotto" style="color: black; font-size: 85%; text-decoration: none; text-align: center;"/>
+                        <span tal:content="here/zport/dmd/supportSettings/getCompanyMotto" style="color: black; font-size: 85%; text-decoration: none; text-align: center;"/>
                     </div>
                     <div id="bottombrandingcontainer">
                     </div>
                     <div id="bannercontainer">
-                        <span tal:content="here/zport/dmd/supportSettings/CompanyBanner" style="color: black; font-size: 70%; text-decoration: none; text-align: justified;"/>
+                        <span tal:content="here/zport/dmd/supportSettings/getCompanyBanner" style="color: black; font-size: 70%; text-decoration: none; text-align: justified;"/>
                     </div>
                 </div>
             </div>

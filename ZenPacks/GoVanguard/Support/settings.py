@@ -36,14 +36,20 @@ class supportSettings(ZenModelRM):
             prop['value'] = getattr(self, prop['id'], prop['defaultValue'])
         return settings
 
-    def getSupportedPacksData(self):
-        return "Test!!"
-
     def getPackageVersion(self):
-        return "1.2.3"
+        return self.packageVersionData
 
     def getPackageName(self):
-        return "ZenPacks.GoVanguard.Support"
+        return self.packageNameData
 
     def getPackageLicense(self):
-        return "0987654321"
+        return self.packageLicenseData
+
+    def getCompanyMotto(self):
+        return "Tacos!!!"
+
+    def getCompanyLink(self):
+        return "Some URL!"
+
+    def getCompanyBanner(self):
+        return "Some banner!"
