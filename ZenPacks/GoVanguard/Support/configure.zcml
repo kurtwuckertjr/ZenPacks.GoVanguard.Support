@@ -19,9 +19,9 @@
 
     <!-- CSS -->
     <browser:viewlet
-        class=".GvitSkinCSS"
+        class=".GvitCSS"
         manager="Products.ZenUI3.browser.interfaces.IHeadExtraManager"
-        name="gvitSkin.css"
+        name="Gvit.css"
         permission="zope2.Public"
         />
 

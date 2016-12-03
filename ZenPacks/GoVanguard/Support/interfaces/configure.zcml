@@ -6,7 +6,7 @@
 
     <!-- Interfaces -->    
     <interface
-       interface=".GvitSkin.IGvitSkin"
+       interface=".Gvit.IGvitSkin"
        type="zope.publisher.interfaces.browser.IBrowserSkinType"
        name="gvitSkin"
        />
