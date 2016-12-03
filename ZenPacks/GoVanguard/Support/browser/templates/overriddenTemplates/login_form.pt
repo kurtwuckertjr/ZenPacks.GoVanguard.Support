@@ -189,7 +189,7 @@
                     </div>
                     <div id="brandingcontainer">
                         <img src="company-logo.png" width=32 height=32>
-                        <a href='' tal:attributes="href here/zport/dmd/supportSettings/getCompanyLink; title here/zport/dmd/supportSettings/CompanyMotto" tal:content="here/zport/dmd/supportSettings/CompanyName" target="_blank" style="color: black; font-size: 125%; text-decoration: none; text-align: left;"></a>
+                        <a href='' tal:attributes="href here/zport/dmd/supportSettings/getCompanyLink; title here/zport/dmd/supportSettings/getCompanyMotto" tal:content="here/zport/dmd/supportSettings/getCompanyName" target="_blank" style="color: black; font-size: 125%; text-decoration: none; text-align: left;"></a>
                         <br>
                         <span tal:content="here/zport/dmd/supportSettings/getCompanyMotto" style="color: black; font-size: 85%; text-decoration: none; text-align: center;"/>
                     </div>
