@@ -32,7 +32,7 @@ class brandingUpload(BrowserView):
 
     def __call__(self, *args, **kwargs):
         if self.request.get('fileData'):
-            destination = zenPath("ZenPacks", "ZenPacks.GoVanguard.Support-1.0.0.egg/ZenPacks/GoVanguard/Support/skins/GVIT/company-logo.png")
+            destination = zenPath("ZenPacks", "ZenPacks.GoVanguard.Support-1.0.0.egg/ZenPacks/GoVanguard/Support/skins/Support/company-logo.png")
             fileData = self.request.get('fileData').read()
             with open(destination, "w") as w:
                 w.write(fileData)
