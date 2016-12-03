@@ -69,6 +69,13 @@ class supportSettings(ZenModelRM):
             result = ''
         return result
 
+    def getCompanyName(self):
+        try:
+            result = self.companyName
+        except:
+            result = ''
+        return result
+
     def getCompanyMotto(self):
         try:
             result = self.companyMotto
