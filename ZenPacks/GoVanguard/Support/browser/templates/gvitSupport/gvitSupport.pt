@@ -33,7 +33,7 @@
         <br>
         &nbsp; Version 1.0.X
         <br>
-        ${here/supportSettings/packageVersionData}
+        ${here/dmd/supportSettings/packageVersionData}
         <a href="http://www.gvit.com/zenoss/"> &nbsp; Need help or support on this package?</a>
       </tal:block>
     </tal:block>

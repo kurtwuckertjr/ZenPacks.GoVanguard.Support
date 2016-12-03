@@ -36,9 +36,9 @@ class ZenPack(ZenPackBase):
         if not hasattr(app.zport.dmd,'supportSettings'):
             manage_addSupportSettings(app.zport.dmd)
             commit()
-        dmd.supportSettings.packageNameData = packageNameData
-        dmd.supportSettings.packageVersionData = packageVersionData
-        dmd.supportSettings.packageLicenseData = packageLicenseData
+        app.zport.dmd.supportSettings.packageNameData = packageNameData
+        app.zport.dmd.supportSettings.packageVersionData = packageVersionData
+        app.zport.dmd.supportSettings.packageLicenseData = packageLicenseData
         commit()
 
 
@@ -51,9 +51,9 @@ class ZenPack(ZenPackBase):
         if not hasattr(app.zport.dmd,'supportSettings'):
             manage_addSupportSettings(app.zport.dmd)
             commit()
-        dmd.supportSettings.packageNameData = packageNameData
-        dmd.supportSettings.packageVersionData = packageVersionData
-        dmd.supportSettings.packageLicenseData = packageLicenseData
+        app.zport.dmd.supportSettings.packageNameData = packageNameData
+        app.zport.dmd.supportSettings.packageVersionData = packageVersionData
+        app.zport.dmd.supportSettings.packageLicenseData = packageLicenseData
         commit()
 
     def remove(self, app, leaveObjects=False):
@@ -67,10 +67,6 @@ class ZenPack(ZenPackBase):
                 UserSettingsManager.factory_type_information[0]['actions'] = tuple([entry for entry in (UserSettingsManager.factory_type_information[0]['actions']) if entry['action'] != 'gvitSupport'])
                 ZenPackManager.factory_type_information[0]['actions'] = tuple([entry for entry in (ZenPackManager.factory_type_information[0]['actions']) if entry['action'] != 'gvitSupport'])
                 ZenossInfo.factory_type_information[0]['actions'] = tuple([entry for entry in (ZenossInfo.factory_type_information[0]['actions']) if entry['action'] != 'gvitSupport'])
-                commit()
-                del dmd.supportSettings.packageNameDat
-                del dmd.supportSettings.packageVersionData
-                del dmd.supportSettings.packageLicenseData
                 commit()
 
         super(ZenPack, self).remove(app, leaveObjects)
